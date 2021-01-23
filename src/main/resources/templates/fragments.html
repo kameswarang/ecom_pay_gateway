@@ -1,0 +1,65 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	</head>
+	<body>
+		<div th:fragment="head(title, description)">
+	        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	        <meta name="description" th:content="${description}">
+	        <meta name="author" content="Kameswaran Ganesh">
+	        
+	        <title th:text="${title}"></title>
+	        
+	        <!-- Bootstrap core CSS -->
+	        <link href="/webjars/bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
+	        <!--  FontAwesome CSS -->
+	        <link href="/webjars/font-awesome/5.12.0/css/all.min.css" rel="stylesheet">
+	        <!-- Custom css -->
+	        <link href="/css/main.css" rel="stylesheet">
+	    </div>
+		<div th:fragment="navigation">
+	        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+	            <div class="container">
+	              <a class="navbar-brand" href="/home">ECommerce Payment Gateway</a>
+	              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+	                <span class="navbar-toggler-icon"></span>
+	              </button>
+	        
+	              <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	                <ul class="navbar-nav mr-auto">
+	                  <li class="nav-item active">
+	                    <a class="nav-link" href="#">by Kameswaran Ganesh <span class="sr-only">(current)</span></a>
+	                  </li>
+	                  <li class="nav-item">
+	                    <a class="nav-link" href="https://github.com/kameswarang/ecom_pay_gateway">this.Github</a>
+	                  </li>
+	                  <li class="nav-item">
+	                    <a class="nav-link" href="https://www.linkedin.com/in/kameswarang">my.LinkedIn</a>
+	                  </li>
+	                </ul>
+	                <div>
+		                <button type="submit" class="btn btn-secondary my-2 my-sm-0 mx-1">
+							<a th:href="cart" class="text-decoration-none text-white">Cart</a>
+		                </button>
+		                <button type="submit" class="btn btn-primary my-2 my-sm-0 mx-1">
+							<a th:href="checkout" class="text-decoration-none text-white">Checkout</a>
+		                </button>
+	                </div>
+	              </div>
+	            </div>
+	        </nav>
+		</div>
+        <div th:fragment="javascripts">
+	        <!-- jQuery -->
+	        <script src="/webjars/jquery/3.4.1/jquery.slim.min.js"></script>
+	        <!-- Bootstrap js -->
+	        <script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+		    <!-- Axios js -->
+		    <script src="/webjars/axios/0.20.0/dist/axios.min.js"></script>
+		    <!-- Vuejs -->
+		    <script src="/webjars/vue/2.6.11/vue.min.js"></script>
+	        <!-- Custom js -->
+	        <script src="/js/main.js"></script>
+        </div>
+	</body>
+</html>
