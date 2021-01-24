@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:include="fragments::head(title='ECommerce Payment Gateway - Home', description='homepage')">
+    </head>
+    <body>
+        <!-- Navigation -->
+		<div th:replace="fragments::navigation"></div>
+        <!-- Content -->
+        <div class="container" id="mainContent">
+	        <div class="m-2">
+	        <h3 class="text-center">Working Features</h3>
+	        <ul>
+	        	<li>Homepage is <a href="/home">/home</a></li>
+	        	<li>REST Endpoints are at <span class="text-info">/api</span>
+        		<ul>
+        			<li>List all books <a href="/api/books">/api/books</a>
+        			<ul>
+        				<li>Display paginated and sorted results</li>
+        				<li><span class="text-info">?page=0,1,2</span> can be used to get subsequent pages</li>
+        				<li><span class="text-info">?size</span> can be used to customise number of results per page; defaults to 20</li>
+        				<li><span class="text-info">?sort=field1,(asc|desc)&field2,(asc|desc)</span> can be used to sort based on fields/li>
+        				<li>Example 1: <a href="/api/books?page=0&sort=price,desc">/api/books?page=0&sort=price,desc</a></li>
+        				<li>Example 2: <a href="/api/books?page=3&sort=title,asc">/api/books?page=3&sort=title,asc</a></li>
+        			</ul>
+        			</li>
+        			<li>Search based on text <span class="text-info">/api/books?text</span></a>
+       				<ul>
+       					<li>Performs indexed search on fields title and authors</li>
+       					<li>Example 1: <a href="/api/books?text=mockingbird">/api/books?text=mockingbird</a></li>
+       					<li>Example 2: <a href="/api/books?text=rowling">/api/books?text=rowling</a></li>
+       					<li>Phrased search is not implemented; "Harry Potter" will search for 'Harry' & 'Potter', not the whole phrase</li>
+       				</ul>
+        			</li>
+        		</ul>
+	        	</li>
+	        </ul>
+	        </div>
+	        <div class="m-2">
+     	    <h3 class="text-center">Features yet to be implements</h3>
+     	    <ul>
+     	    	<li>UI to interact with REST endpoints for searching, pagination and sorting</li>
+     	    </ul>
+			</div>
+        </div>
+        <div th:replace="fragments::javascripts"></div>
+	</body>
+</html>

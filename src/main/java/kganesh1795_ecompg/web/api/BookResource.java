@@ -16,12 +16,7 @@ public class BookResource {
 	@Autowired
 	BookService bookService;
 	
-	/*@GetMapping("/")
-	public Iterable<Book> getBooks(Pageable pageable) {
-		return bookService.findAll(pageable);
-	}*/
-	
-	@GetMapping("/")
+	@GetMapping
 	public Iterable<Book> getBooks(@RequestParam(required=false) String text, Pageable pageable) {
 		if(text == null) {
 			return bookService.findAll(pageable);

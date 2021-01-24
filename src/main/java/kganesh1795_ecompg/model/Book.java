@@ -11,7 +11,7 @@ public class Book {
 	@Id
 	private int id;
 	private String title;
-	private String author;
+	private String authors;
 	private double averageRating;
 	private long isbn;
 	private String languageCode;

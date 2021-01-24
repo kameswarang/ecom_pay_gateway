@@ -1,7 +1,9 @@
 package kganesh1795_ecompg.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
+import org.springframework.data.mongodb.core.MongoTemplate;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -30,4 +32,8 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
 	
 		return mc;
 	}
+	
+    public @Bean MongoTemplate mongoTemplate() {
+        return new MongoTemplate(this.mongoClient(), this.db);
+      }
 }

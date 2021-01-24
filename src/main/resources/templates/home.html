@@ -6,8 +6,12 @@
         <!-- Navigation -->
 		<div th:replace="fragments::navigation"></div>
         <!-- Content -->
-        <div class="container"></div>
-        
+        <div class="container" id="mainContent">
+			<book-card v-for="book in books" :book="book" :bookimage="bookImages[Math.round(Math.random()*10)]"></book-card>
+		</div>
         <div th:replace="fragments::javascripts"></div>
+        <!-- Custom js -->
+        <script src="/js/components.js"></script>
+        <script src="/js/home.js"></script>
 	</body>
 </html>
