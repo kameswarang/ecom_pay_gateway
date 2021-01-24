@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:include="fragments::head(title='ECommerce Payment Gateway - Home', description='homepage')">
+    </head>
+    <body>
+        <!-- Navigation -->
+		<div th:replace="fragments::navigation"></div>
+        <!-- Content -->
+        <div class="container" id="mainContent">
+			<book-card v-on:cart-click="" v-for="book in books" :book="book" :bookimage="bookImages[Math.round(Math.random()*10)]" incart="true"></book-card>
+	        <div class="w-fit-content mx-auto">
+            	<form method=POST th:action="checkout">
+            		
+            		<input type="hidden" name="cartValue" v-bind:value="getCartValue()"></input>
+	              	<button class="btn btn-primary btn-lg" type="submit">Checkout and Pay INR {{ getCartValue() }}</button>
+              	</form>
+			</div>
+        </div>
+        <div th:replace="fragments::javascripts"></div>
+        <!-- Custom js -->
+        <script src="/js/components.js"></script>
+        <script src="/js/cart.js"></script>
+	</body>
+</html>

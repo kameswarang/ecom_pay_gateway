@@ -17,7 +17,7 @@
 	        <!-- Custom css -->
 	        <link href="/css/main.css" rel="stylesheet">
 	    </div>
-		<div th:fragment="navigation">
+		<div th:fragment="navigation" id="navigation">
 	        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 	            <div class="container">
 	              <a class="navbar-brand" href="/home">ECommerce Payment Gateway</a>
@@ -39,10 +39,7 @@
 	                </ul>
 	                <div>
 		                <button type="submit" class="btn btn-secondary my-2 my-sm-0 mx-1">
-							<a th:href="cart" class="text-decoration-none text-white">Cart</a>
-		                </button>
-		                <button type="submit" class="btn btn-primary my-2 my-sm-0 mx-1">
-							<a th:href="checkout" class="text-decoration-none text-white">Checkout</a>
+							<a th:href="cart" class="text-decoration-none text-white">Cart ({{ cartNos }})</a>
 		                </button>
 	                </div>
 	              </div>
@@ -52,12 +49,18 @@
         <div th:fragment="javascripts">
 	        <!-- jQuery -->
 	        <script src="/webjars/jquery/3.4.1/jquery.slim.min.js"></script>
+	        <!-- js-cookie -->
+	        <script src="/webjars/js-cookie/2.2.1/js.cookie.min.js"></script>
 	        <!-- Bootstrap js -->
 	        <script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 		    <!-- Axios js -->
 		    <script src="/webjars/axios/0.20.0/dist/axios.min.js"></script>
 		    <!-- Vuejs -->
 		    <script src="/webjars/vue/2.6.11/vue.min.js"></script>
+		    <!-- Init for app -->
+            <script src="/js/init.js"></script>
+            <!-- Navigation for app -->
+            <script src="/js/navigation.js"></script>
         </div>
 	</body>
 </html>

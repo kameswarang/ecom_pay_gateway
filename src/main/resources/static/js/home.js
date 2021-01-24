@@ -1,21 +1,36 @@
-$.noConflict();
-
 Vue.config.devtools = true
 
-var vm = new Vue({
+var mainContent = new Vue({
 	el: "#mainContent",
 	data: {
 		books: [],
-		bookImages: []
+		bookImages: [],
+		cart: []
+	},
+	methods: {
+		doCart: function(book) {
+			cart = Cookies.get("cart")
+			if(cart == undefined) {
+				var cart = [book]
+				Cookies.set("cart", JSON.stringify(cart));
+			}
+			else {
+				cart = JSON.parse(cart);
+				cart.push(book);
+				Cookies.set("cart", JSON.stringify(cart));
+			}
+			console.log(JSON.parse(Cookies.get("cart")));
+			navigation.updateCartNos();
+		}
 	}
 })
 
 axios.get('/api/books')
 	.then(function(response){
-		vm.books = response.data.content;
+		mainContent.books = response.data.content;
 	})
 axios.get('/api/bookImages')
 	.then(function(response) {
-		vm.bookImages = response.data;
+		mainContent.bookImages = response.data;
 		
 	})

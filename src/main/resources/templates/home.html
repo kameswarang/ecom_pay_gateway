@@ -7,7 +7,7 @@
 		<div th:replace="fragments::navigation"></div>
         <!-- Content -->
         <div class="container" id="mainContent">
-			<book-card v-for="book in books" :book="book" :bookimage="bookImages[Math.round(Math.random()*10)]"></book-card>
+			<book-card v-on:cart-click="doCart($event)" v-for="book in books" :book="book" :bookimage="bookImages[Math.round(Math.random()*10)]" incart="false"></book-card>
 		</div>
         <div th:replace="fragments::javascripts"></div>
         <!-- Custom js -->
