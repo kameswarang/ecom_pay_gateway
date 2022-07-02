@@ -9,12 +9,15 @@ Build an eCommerce website for your customers to buy books. Even though they are
 
 ### Ideal expectation from the webapp
 **Frontend**
+
 Implement a frontend in React/Angular//Vue/HTML CSS. Implement an eCommerce site where you can Search, Sort and add Books to the Cart. Get Books details from the given API. Assign a random image to a book from another API. After adding to cart, Checkout must redirect to a Real payment gateway
 
 **Backend**
+
 Implement a backend in .NET/Java/PHP/NodeJS/Python. Make sure the Payment Gateway is secure.
 
 **Deployment**
+
 Deploy your Fullstack App on any Cloud platform or service. Eg. Heroku or AWS Elastic Beanstalk or Microsoft Azure or any free alternative or any other way.
 
 ### Minimum Requirement (entry level)
